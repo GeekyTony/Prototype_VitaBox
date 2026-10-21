@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vita Box – Repas sains livrés au Maroc, abonnement mensuel</title>
+<link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+  --bg: #f4f1ec;
+  --card: #ffffff;
+  --ink: #2a1a1f;
+  --wine: #5a1226;
+  --wine-hover: #420c1a;
+  --gold: #b8893f;
+  --soft: #efe6d8;
+  --line: #e3d9c8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1315;
+    --card: #271c1f;
+    --ink: #f3e9e4;
+    --wine: #c9506f;
+    --wine-hover: #a33b54;
+    --gold: #d4a85a;
+    --soft: #33252a;
+    --line: #43333a;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: 'Philosopher', Georgia, serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--wine);
+  color: #fff;
+  border: 0;
+  border-radius: 30px;
+  padding: 12px 26px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--wine-hover);
+  transform: translateY(-1px);
+}
+
+.btn.alt {
+  background-color: transparent;
+  color: var(--wine);
+  border: 1.5px solid var(--wine);
+}
+
+.btn.alt:hover {
+  background-color: var(--wine);
+  color: #fff;
+}
+
+.badge {
+  background-color: var(--soft);
+  color: var(--wine);
+  border: 1px solid var(--line);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.meal-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Header Nav -->
+<header class="px-6 py-4 flex items-center justify-between shadow-sm">
+  <a href="#" class="flex items-center gap-3 font-bold text-2xl text-[var(--wine)] brand-font">
+    <i class="w-10 h-10 rounded-full bg-[var(--wine)] text-[var(--gold)] grid place-items-center not-italic border-2 border-[var(--gold)] text-sm shadow">VB</i>
+    <span>Vita Box</span>
+  </a>
+
+  <nav class="hidden md:flex items-center gap-8 font-medium">
+    <a href="#about" class="hover:text-[var(--wine)] transition">Concept</a>
+    <a href="#menu" class="hover:text-[var(--wine)] transition">Nos 40 Repas</a>
+    <a href="#pricing" class="hover:text-[var(--wine)] transition">Abonnement Mensuel</a>
+    <a href="#subscription-form" class="hover:text-[var(--wine)] transition">S'abonner</a>
+  </nav>
+
+  <div class="flex items-center gap-4">
+    <a href="#subscription-form" class="btn text-sm py-2 px-5">Commander / S'abonner</a>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative bg-[var(--card)] border-b border-[var(--line)] overflow-hidden">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center px-6 py-12 md:py-20">
+    
+    <!-- Hero Text -->
+    <div class="text-left space-y-6">
+      <span class="inline-block px-3 py-1 rounded-full bg-[var(--soft)] text-[var(--wine)] text-xs font-semibold uppercase tracking-wider border border-[var(--line)]">
+        🇲🇦 Livré chez vous au Maroc • Abonnement Mensuel
+      </span>
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight text-[var(--ink)]">
+        Des repas sains préparés par des chefs, livrés au quotidien.
+      </h1>
+      <p class="text-lg opacity-80 max-w-lg">
+        Profitez d'un abonnement mensuel sur mesure. Composez chaque semaine vos repas parmi notre catalogue exclusif de <strong>40 plats équilibrés</strong>.
+      </p>
+      
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="#pricing" class="btn text-base px-8 py-3">Voir les Formules (MAD)</a>
+        <a href="#menu" class="btn alt text-base px-8 py-3">Découvrir les 40 Repas</a>
+      </div>
+
+      <div class="flex items-center gap-6 pt-4 text-xs opacity-75 font-medium">
+        <span>✓ 100% Frais</span>
+        <span>✓ Engagement 1 Mois Min.</span>
+        <span>✓ Tarif dégressif Déjeuner + Dîner</span>
+      </div>
+    </div>
+
+    <!-- Hero Image Banner -->
+    <div class="relative w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-[var(--line)]">
+      <img 
+        src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?q=80&w=1200&auto=format&fit=crop" 
+        alt="Assortiment de repas sains Vita Box" 
+        class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-700"
+        onerror="this.onerror=null; this.src='https://placehold.co/1200x800/5a1226/ffffff?text=Repas+Sains+Vita+Box';"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+      <div class="absolute bottom-4 left-4 right-4 p-4 bg-white/95 dark:bg-black/90 backdrop-blur-md rounded-xl border border-white/20 text-xs flex justify-between items-center shadow-lg">
+        <div>
+          <p class="font-bold text-sm text-[var(--wine)]">Formule Complète (Déjeuner + Dîner)</p>
+          <p class="opacity-75">Réduction exclusive abonnement 1 mois</p>
+        </div>
+        <span class="text-[var(--gold)] font-bold text-lg">120 MAD <span class="text-xs text-gray-500 font-normal">/repas</span></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Stats / Highlights -->
+<section id="about" class="py-8 bg-[var(--soft)] border-b border-[var(--line)]">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div>
+      <p class="text-3xl font-bold text-[var(--wine)] brand-font">120 MAD</p>
+      <p class="text-xs uppercase tracking-wide opacity-75">Tarif Formule Complète</p>
+    </div>
+    <div>
+      <p class="text-3xl font-bold text-[var(--wine)] brand-font">1 Mois</p>
+      <p class="text-xs uppercase tracking-wide opacity-75">Engagement Minimum</p>
+    </div>
+    <div>
+      <p class="text-3xl font-bold text-[var(--wine)] brand-font">40 Plats</p>
+      <p class="text-xs uppercase tracking-wide opacity-75">Variété au Choix</p>
+    </div>
+    <div>
+      <p class="text-3xl font-bold text-[var(--wine)] brand-font">Livraison</p>
+      <p class="text-xs uppercase tracking-wide opacity-75">Quotidienne Fraîche</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section (In MAD with 1 Month Commitment) -->
+<section id="pricing" class="py-16 max-w-6xl mx-auto px-6">
+  <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+    <span class="badge uppercase">Abonnement Mensuel</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-[var(--wine)]">Formules & Tarifs en Dirhams (MAD)</h2>
+    <p class="opacity-80">
+      Nos abonnements sont conclus avec un <strong>engagement minimum d'un mois (4 semaines / 20 à 28 jours de livraison)</strong> pour garantir des ingrédients frais et une continuité nutritionnelle.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <!-- Option 1: 1 Repas / Jour -->
+    <div class="bg-[var(--card)] p-8 rounded-2xl border border-[var(--line)] flex flex-col justify-between shadow-sm relative">
+      <div>
+        <span class="badge">Option Solo</span>
+        <h3 class="text-2xl font-bold mt-2">Déjeuner OU Dîner</h3>
+        <p class="text-sm opacity-75 mt-1">1 repas sain livré chaque jour ouvré</p>
+        
+        <div class="my-6">
+          <span class="text-4xl font-bold text-[var(--wine)]">125 MAD</span>
+          <span class="text-sm opacity-75">/ repas</span>
+          <p class="text-xs text-gray-500 mt-1">Soit 2 500 MAD / mois (20 repas sur 4 semaines)</p>
+        </div>
+
+        <ul class="space-y-3 text-sm opacity-90 mb-8 border-t border-[var(--line)] pt-4">
+          <li class="flex items-center gap-2">✓ Choix sur catalogue de 40 repas</li>
+          <li class="flex items-center gap-2">✓ Engagement minimum de 1 mois</li>
+          <li class="flex items-center gap-2">✓ Livraison fraîche à domicile ou bureau</li>
+          <li class="flex items-center gap-2">✓ Modification du menu chaque semaine</li>
+        </ul>
+      </div>
+      <button onclick="selectPlan('125', 'Déjeuner OU Dîner (125 MAD/repas)')" class="btn alt w-full">S'abonner à cette formule</button>
+    </div>
+
+    <!-- Option 2: 2 Repas / Jour (Déjeuner + Dîner) -->
+    <div class="bg-[var(--card)] p-8 rounded-2xl border-2 border-[var(--gold)] flex flex-col justify-between shadow-lg relative">
+      <div class="absolute -top-3 right-6 bg-[var(--gold)] text-white text-xs uppercase px-3 py-1 rounded-full font-bold">
+        Meilleure Offre (Économique)
+      </div>
+      <div>
+        <span class="badge">Option Duo Complète</span>
+        <h3 class="text-2xl font-bold mt-2">Déjeuner ET Dîner</h3>
+        <p class="text-sm opacity-75 mt-1">2 repas sains livrés chaque jour</p>
+
+        <div class="my-6">
+          <span class="text-4xl font-bold text-[var(--wine)]">120 MAD</span>
+          <span class="text-sm opacity-75">/ repas</span>
+          <p class="text-xs text-[var(--gold)] font-semibold mt-1">Économisez 10 MAD par jour ! (4 800 MAD / mois pour 40 repas)</p>
+        </div>
+
+        <ul class="space-y-3 text-sm opacity-90 mb-8 border-t border-[var(--line)] pt-4">
+          <li class="flex items-center gap-2">✓ Choix complet sur les 40 repas</li>
+          <li class="flex items-center gap-2">✓ Engagement minimum de 1 mois</li>
+          <li class="flex items-center gap-2">✓ Double livraison ou livraison groupée</li>
+          <li class="flex items-center gap-2">✓ Suivi nutritionnel gratuit sur demande</li>
+        </ul>
+      </div>
+      <button onclick="selectPlan('120', 'Déjeuner ET Dîner (120 MAD/repas)')" class="btn w-full">S'abonner à la formule complète</button>
+    </div>
+  </div>
+
+  <div class="mt-8 text-center bg-[var(--soft)] p-4 rounded-xl text-xs opacity-80 max-w-2xl mx-auto border border-[var(--line)]">
+    ⚠️ <strong>Engagement de 1 mois minimum :</strong> La facturation s'effectue mensuellement. Vous pouvez modifier la composition de vos plats chaque semaine.
+  </div>
+</section>
+
+<!-- Menu Section: 40 Meals Choice -->
+<section id="menu" class="py-16 bg-[var(--card)] border-t border-[var(--line)]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--wine)]">Notre Carte Exclusive de 40 Repas</h2>
+      <p class="opacity-80 text-base">
+        Sélectionnez vos plats préférés pour votre mois d'abonnement.
+      </p>
+    </div>
+
+    <!-- Filter Category Buttons -->
+    <div class="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar text-sm">
+      <button onclick="filterMeals('all', event)" class="filter-btn active bg-[var(--wine)] text-white px-5 py-2 rounded-full font-medium transition">Tous (40)</button>
+      <button onclick="filterMeals('proteine', event)" class="filter-btn bg-[var(--bg)] border border-[var(--line)] px-5 py-2 rounded-full font-medium hover:border-[var(--wine)] transition">High Protein</button>
+      <button onclick="filterMeals('vege', event)" class="filter-btn bg-[var(--bg)] border border-[var(--line)] px-5 py-2 rounded-full font-medium hover:border-[var(--wine)] transition">Végétarien & Vegan</button>
+      <button onclick="filterMeals('lowcarb', event)" class="filter-btn bg-[var(--bg)] border border-[var(--line)] px-5 py-2 rounded-full font-medium hover:border-[var(--wine)] transition">Low Carb / Keto</button>
+      <button onclick="filterMeals('equilibre', event)" class="filter-btn bg-[var(--bg)] border border-[var(--line)] px-5 py-2 rounded-full font-medium hover:border-[var(--wine)] transition">Équilibré & Gourmand</button>
+    </div>
+
+    <!-- Selection counter bar -->
+    <div class="sticky top-[73px] z-20 bg-[var(--bg)] p-4 rounded-xl shadow-md border border-[var(--line)] mb-8 flex items-center justify-between flex-wrap gap-4">
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-sm">Plats pré-sélectionnés :</span>
+        <span id="selected-count" class="bg-[var(--wine)] text-white font-bold px-3 py-1 rounded-full text-xs">0 plat</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="resetSelection()" class="text-xs text-red-500 underline cursor-pointer">Effacer</button>
+        <a href="#subscription-form" class="btn text-xs py-2 px-5">Valider mes choix & S'abonner</a>
+      </div>
+    </div>
+
+    <!-- 40 Meals Grid Container -->
+    <div id="meals-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Populated via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Subscription Form & User Validation Section -->
+<section id="subscription-form" class="py-16 bg-[var(--soft)] border-t border-[var(--line)]">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="bg-[var(--card)] p-8 md:p-10 rounded-2xl border border-[var(--line)] shadow-xl">
+      <div class="text-center mb-8">
+        <span class="badge uppercase">Étape Finale</span>
+        <h2 class="text-3xl font-bold text-[var(--wine)] mt-2">Formulaire d'Abonnement Mensuel</h2>
+        <p class="text-sm opacity-80 mt-1">Saisissez vos informations pour finaliser votre inscription et planifier vos livraisons.</p>
+      </div>
+
+      <form id="user-sub-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+        
+        <!-- Formula selection summary -->
+        <div class="bg-[var(--bg)] p-4 rounded-xl border border-[var(--line)]">
+          <label class="block text-xs font-bold uppercase tracking-wider text-[var(--wine)] mb-2">1. Choisissez votre formule mensuelle *</label>
+          <select id="form-plan" required class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+            <option value="125">1 Repas par jour (Déjeuner OU Dîner) - 125 MAD / repas</option>
+            <option value="120" selected>2 Repas par jour (Déjeuner ET Dîner) - 120 MAD / repas [Recommandé]</option>
+          </select>
+          <p class="text-[11px] opacity-70 mt-2">✨ Engagement contractuel d'un mois minimum (renouvelable).</p>
+        </div>
+
+        <!-- Personal Info -->
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-[var(--wine)] mb-3">2. Informations Personnelles</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium mb-1">Nom *</label>
+              <input type="text" required id="user-lastname" placeholder="El Amrani" class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-1">Prénom *</label>
+
+              <input type="text" required id="user-firstname" placeholder="Youssef" class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4 mt-4">
+            <div>
+              <label class="block text-xs font-medium mb-1">Téléphone (WhatsApp) *</label>
+              <input type="tel" required id="user-phone" placeholder="06 12 34 56 78" class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+            </div>
+            <div>
+              <label class="block text-xs font-medium mb-1">Adresse Email *</label>
+              <input type="email" required id="user-email" placeholder="youssef@example.com" class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Address -->
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-[var(--wine)] mb-3">3. Adresse de Livraison</h3>
+          <div class="grid md:grid-cols-3 gap-4 mb-4">
+            <div class="md:col-span-1">
+              <label class="block text-xs font-medium mb-1">Ville *</label>
+              <select id="user-city" required class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+                <option value="Casablanca">Casablanca</option>
+                <option value="Rabat">Rabat</option>
+                <option value="Marrakech">Marrakech</option>
+                <option value="Tanger">Tanger</option>
+                <option value="Agadir">Agadir</option>
+                <option value="Kenitra">Kénitra</option>
+                <option value="Autre">Autre ville</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-xs font-medium mb-1">Adresse complète de livraison *</label>
+              <input type="text" required id="user-address" placeholder="N° Résidence, Rue, Quartier..." class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium mb-1">Créneau horaire de livraison préféré</label>
+            <select id="user-time" class="w-full p-3 rounded-lg border border-[var(--line)] bg-[var(--card)] text-sm focus:outline-none focus:border-[var(--wine)]">
+              <option value="matin">Le matin (8h00 - 11h00)</option>
+              <option value="midi">Avant le déjeuner (11h30 - 13h00)</option>
+              <option value="soir">En fin d'après-midi / Soir (17h00 - 19h00)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-[var(--wine)] mb-3">4. Mode de Paiement Mensuel</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <label class="border border-[var(--line)] p-3 rounded-xl flex items-center gap-3 cursor-pointer bg-[var(--card)] hover:border-[var(--wine)]">
+              <input type="radio" name="payment" value="Carte Bancaire CMI" checked class="accent-[var(--wine)]">
+              <span class="text-xs font-medium">Carte Bancaire (CMI)</span>
+            </label>
+            <label class="border border-[var(--line)] p-3 rounded-xl flex items-center gap-3 cursor-pointer bg-[var(--card)] hover:border-[var(--wine)]">
+              <input type="radio" name="payment" value="Paiement à la première livraison" class="accent-[var(--wine)]">
+              <span class="text-xs font-medium">Paiement / Virement</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Engagement agreement check -->
+        <div class="flex items-start gap-3 pt-2">
+          <input type="checkbox" required id="user-terms" class="mt-1 accent-[var(--wine)]">
+          <label for="user-terms" class="text-xs opacity-80 leading-snug">
+            J'accepte les conditions de l'<strong>abonnement mensuel Vita Box avec engagement d'un mois minimum</strong> et confirme l'exactitude des informations fournies.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn w-full text-base py-4 shadow-lg">
+          Valider mon Abonnement Mensuel
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Confirmation Modal -->
+<div id="confirmation-modal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+  <div class="bg-[var(--card)] border border-[var(--line)] rounded-2xl p-6 md:p-8 max-w-lg w-full shadow-2xl relative animate-fade-in">
+    <div class="text-center space-y-4">
+      <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+        ✓
+      </div>
+      <h3 class="text-2xl font-bold text-[var(--wine)]">Abonnement Confirmé !</h3>
+      <p class="text-sm opacity-80">
+        Merci <strong id="modal-user-name"></strong> ! Votre demande d'abonnement mensuel Vita Box a bien été enregistrée.
+      </p>
+
+      <div class="bg-[var(--soft)] p-4 rounded-xl text-left text-xs space-y-2 border border-[var(--line)]">
+        <p><strong>Formule choisie :</strong> <span id="modal-plan"></span></p>
+        <p><strong>Engagement :</strong> 1 Mois minimum (renouvelable)</p>
+        <p><strong>Ville de livraison :</strong> <span id="modal-city"></span></p>
+        <p><strong>Téléphone :</strong> <span id="modal-phone"></span></p>
+      </div>
+
+      <p class="text-xs text-gray-500">
+        Notre équipe vous contactera dans les plus brefs délais sur WhatsApp pour valider le calendrier précis de vos livraisons.
+      </p>
+
+      <button onclick="closeModal()" class="btn w-full">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-16 max-w-4xl mx-auto px-6">
+  <h2 class="text-3xl font-bold text-center text-[var(--wine)] mb-10">Questions Fréquentes</h2>
+  <div class="space-y-4">
+    <details class="bg-[var(--card)] p-5 rounded-xl border border-[var(--line)] cursor-pointer">
+      <summary class="font-bold">Pourquoi y a-t-il un engagement d'un mois minimum ?</summary>
+      <p class="mt-3 text-sm opacity-80">L'engagement d'un mois (4 semaines) nous permet de négocier directement avec les producteurs locaux au Maroc pour garantir des produits frais de qualité supérieure au meilleur tarif (120 MAD à 125 MAD par repas).</p>
+    </details>
+    <details class="bg-[var(--card)] p-5 rounded-xl border border-[var(--line)] cursor-pointer">
+      <summary class="font-bold">Quelle est la différence entre la formule à 125 MAD et celle à 120 MAD ?</summary>
+      <p class="mt-3 text-sm opacity-80">La formule 1 repas/jour (Déjeuner OU Dîner) est à 125 MAD/repas. Si vous optez pour la formule complète Déjeuner ET Dîner (2 repas/jour), vous bénéficiez d'un tarif préférentiel de 120 MAD par repas.</p>
+    </details>
+    <details class="bg-[var(--card)] p-5 rounded-xl border border-[var(--line)] cursor-pointer">
+      <summary class="font-bold">Puis-je changer mes choix de repas durant le mois ?</summary>
+      <p class="mt-3 text-sm opacity-80">Oui ! Vous pouvez mettre à jour votre sélection parmi le catalogue de 40 repas chaque semaine avant le vendredi soir pour la semaine suivante.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[var(--card)] border-t border-[var(--line)] py-10 text-center text-sm opacity-80">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2 font-bold brand-font text-lg text-[var(--wine)]">
+      <span>Vita Box</span> – Repas sains au Maroc (MAD)
+    </div>
+    <p>© 2026 Vita Box Maroc. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// 40 Healthy Meals Data
+const mealsData = [
+  { id: 1, title: "Poulet Teriyaki & Riz Basmati", category: "proteine", calories: 480, protein: 42, carbs: 45, img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop" },
+  { id: 2, title: "Saumon Grillé & Quinoa aux Herbes", category: "equilibre", calories: 520, protein: 38, carbs: 35, img: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&auto=format&fit=crop" },
+  { id: 3, title: "Bowl Végétalien au Tofu & Avocat", category: "vege", calories: 410, protein: 22, carbs: 40, img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&auto=format&fit=crop" },
+  { id: 4, title: "Bifteck de Bœuf & Légumes Rôtis", category: "lowcarb", calories: 450, protein: 48, carbs: 12, img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop" },
+  { id: 5, title: "Curry de Lentilles Coral & Lait de Coco", category: "vege", calories: 390, protein: 18, carbs: 50, img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&auto=format&fit=crop" },
+  { id: 6, title: "Dinde Rôtie & Purée de Patates Douces", category: "proteine", calories: 460, protein: 40, carbs: 38, img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&auto=format&fit=crop" },
+  { id: 7, title: "Pad Thaï Crevettes & Noix de Cajou", category: "equilibre", calories: 490, protein: 32, carbs: 52, img: "https://images.unsplash.com/photo-1559847844-5315695dadae?w=500&auto=format&fit=crop" },
+  { id: 8, title: "Salade Grecque Féta & Olives Kalamata", category: "lowcarb", calories: 350, protein: 14, carbs: 10, img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop" },
+  { id: 9, title: "Aiguillettes de Canard & Haricots Verts", category: "lowcarb", calories: 430, protein: 44, carbs: 11, img: "https://images.unsplash.com/photo-1514944288352-fffac99f0bdf?w=500&auto=format&fit=crop" },
+  { id: 10, title: "Risotto aux Champignons & Parmigiano", category: "vege", calories: 470, protein: 16, carbs: 58, img: "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?w=500&auto=format&fit=crop" },
+  { id: 11, title: "Filet de Cabillaud Sauce Citronnée", category: "proteine", calories: 380, protein: 36, carbs: 20, img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&auto=format&fit=crop" },
+  { id: 12, title: "Chili con Carne Allégé & Riz Noir", category: "equilibre", calories: 510, protein: 35, carbs: 48, img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&auto=format&fit=crop" },
+  { id: 13, title: "Wok de Tofu Mariné aux Légumes Croquants", category: "vege", calories: 360, protein: 20, carbs: 32, img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop" },
+  { id: 14, title: "Paupiette de Poulet au Pesto & Courgettes", category: "lowcarb", calories: 420, protein: 45, carbs: 8, img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500&auto=format&fit=crop" },
+  { id: 15, title: "Falafels Maison & Hummus au Paprika", category: "vege", calories: 440, protein: 16, carbs: 54, img: "https://images.unsplash.com/photo-1593001874117-c99c800e3e7b?w=500&auto=format&fit=crop" },
+  { id: 16, title: "Tartare de Saumon & Mangue Fraîche", category: "equilibre", calories: 410, protein: 28, carbs: 22, img: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500&auto=format&fit=crop" },
+  { id: 17, title: "Brochettes de Bœuf Marinées & Ratatouille", category: "proteine", calories: 440, protein: 46, carbs: 15, img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&auto=format&fit=crop" },
+  { id: 18, title: "Spaghettis de Courgettes Bolognese Keto", category: "lowcarb", calories: 340, protein: 30, carbs: 9, img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&auto=format&fit=crop" },
+  { id: 19, title: "Poulet au Curry Jaune Thai & Riz Thai", category: "equilibre", calories: 480, protein: 38, carbs: 42, img: "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=500&auto=format&fit=crop" },
+  { id: 20, title: "Bowl de Pois Chiches Rôtis & Épinards", category: "vege", calories: 380, protein: 17, carbs: 46, img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&auto=format&fit=crop" },
+  { id: 21, title: "Pavé de Thon Snacké & Sésame", category: "proteine", calories: 430, protein: 50, carbs: 10, img: "https://images.unsplash.com/photo-1501595091296-3aa970afb3ff?w=500&auto=format&fit=crop" },
+  { id: 22, title: "Burger Sano au Poulet & Bun Complet", category: "equilibre", calories: 520, protein: 36, carbs: 44, img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop" },
+  { id: 23, title: "Salade de Lentilles, Épinards & Œuf Poché", category: "vege", calories: 370, protein: 21, carbs: 32, img: "https://images.unsplash.com/photo-1522184216316-3c25379f9760?w=500&auto=format&fit=crop" },
+  { id: 24, title: "Crevettes Ail & Persil avec Brocolis", category: "lowcarb", calories: 320, protein: 34, carbs: 8, img: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=500&auto=format&fit=crop" },
+  { id: 25, title: "Lasagnes aux Légumes du Soleil", category: "vege", calories: 450, protein: 18, carbs: 55, img: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=500&auto=format&fit=crop" },
+  { id: 26, title: "Dinde au Paprika & Boulgour", category: "proteine", calories: 440, protein: 42, carbs: 39, img: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&auto=format&fit=crop" },
+  { id: 27, title: "Poke Bowl Saumon & Edamame", category: "equilibre", calories: 490, protein: 33, carbs: 41, img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop" },
+  { id: 28, title: "Filet Mignon de Porc & Purée de Céleri", category: "lowcarb", calories: 410, protein: 40, carbs: 12, img: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=500&auto=format&fit=crop" },
+  { id: 29, title: "Gratin de Chou-Fleur Végétalien", category: "vege", calories: 330, protein: 14, carbs: 22, img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop" },
+  { id: 30, title: "Poulet Tikka Masala & Riz Blanc", category: "proteine", calories: 500, protein: 41, carbs: 45, img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&auto=format&fit=crop" },
+  { id: 31, title: "Coquille Saint-Jacques & Fondue de Poireaux", category: "equilibre", calories: 360, protein: 29, carbs: 16, img: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500&auto=format&fit=crop" },
+  { id: 32, title: "Omelette aux Champignons & Salade Verde", category: "lowcarb", calories: 310, protein: 24, carbs: 5, img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop" },
+  { id: 33, title: "Burrito Bowl Végétarien Haricots Noirs", category: "vege", calories: 460, protein: 19, carbs: 58, img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&auto=format&fit=crop" },
+  { id: 34, title: "Sauté de Bœuf au Gingembre", category: "proteine", calories: 450, protein: 45, carbs: 18, img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop" },
+  { id: 35, title: "Dos de Lieu Noir en Croûte d'Herbes", category: "equilibre", calories: 370, protein: 35, carbs: 14, img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&auto=format&fit=crop" },
+  { id: 36, title: "Salade Niçoise au Thon Frais", category: "lowcarb", calories: 390, protein: 36, carbs: 11, img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop" },
+  { id: 37, title: "Gnocchis de Patate Douce & Sauge", category: "vege", calories: 430, protein: 12, carbs: 62, img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&auto=format&fit=crop" },
+  { id: 38, title: "Poulet Rôti aux Herbes de Provence", category: "proteine", calories: 470, protein: 44, carbs: 20, img: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&auto=format&fit=crop" },
+  { id: 39, title: "Couscous Végétarien aux 7 Légumes", category: "vege", calories: 420, protein: 15, carbs: 59, img: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?w=500&auto=format&fit=crop" },
+  { id: 40, title: "Salade de Poulpe Grillé au Citron", category: "lowcarb", calories: 340, protein: 32, carbs: 7, img: "https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=500&auto=format&fit=crop" }
+];
+
+let selectedMeals = {};
+let currentFilter = 'all';
+
+// Render 40 Meals
+function renderMeals(filter = 'all') {
+  const grid = document.getElementById('meals-grid');
+  grid.innerHTML = '';
+
+  const filtered = filter === 'all' ? mealsData : mealsData.filter(m => m.category === filter);
+
+  filtered.forEach(meal => {
+    const qty = selectedMeals[meal.id] || 0;
+    
+    const card = document.createElement('div');
+    card.className = "meal-card rounded-2xl overflow-hidden flex flex-col justify-between";
+    card.innerHTML = `
+      <div>
+        <div class="relative h-44 overflow-hidden bg-gray-200">
+          <img src="${meal.img}" alt="${meal.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x350/5a1226/ffffff?text=Vita+Box+Repas'">
+          <span class="absolute top-3 left-3 badge uppercase">${meal.category}</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base line-clamp-1 mb-1">${meal.title}</h3>
+          <div class="flex items-center gap-3 text-xs opacity-75 mt-2">
+            <span>🔥 ${meal.calories} kcal</span>
+            <span>💪 ${meal.protein}g Prot</span>
+            <span>🌾 ${meal.carbs}g Gluc</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 pt-0 flex items-center justify-between">
+        <span class="text-xs font-semibold text-[var(--gold)]">Prêt en 3 min</span>
+        <div class="flex items-center gap-2">
+          <button onclick="changeQty(${meal.id}, -1)" class="w-7 h-7 rounded-full bg-[var(--soft)] text-[var(--wine)] font-bold flex items-center justify-center hover:bg-[var(--line)]">-</button>
+          <span class="text-sm font-bold w-4 text-center">${qty}</span>
+          <button onclick="changeQty(${meal.id}, 1)" class="w-7 h-7 rounded-full bg-[var(--wine)] text-white font-bold flex items-center justify-center hover:opacity-90">+</button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function changeQty(id, delta) {
+  const current = selectedMeals[id] || 0;
+  const next = Math.max(0, current + delta);
+  if (next === 0) {
+    delete selectedMeals[id];
+  } else {
+    selectedMeals[id] = next;
+  }
+  updateCounter();
+  renderMeals(currentFilter);
+}
+
+function resetSelection() {
+  selectedMeals = {};
+  updateCounter();
+  renderMeals(currentFilter);
+}
+
+function updateCounter() {
+  const total = Object.values(selectedMeals).reduce((a, b) => a + b, 0);
+  document.getElementById('selected-count').innerText = `${total} plat${total > 1 ? 's' : ''}`;
+}
+
+function filterMeals(category, evt) {
+  currentFilter = category;
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('bg-[var(--wine)]', 'text-white');
+    btn.classList.add('bg-[var(--bg)]');
+  });
+  if (evt && evt.target) {
+    evt.target.classList.add('bg-[var(--wine)]', 'text-white');
+  }
+  renderMeals(category);
+}
+
+// Select Plan from Pricing Cards
+function selectPlan(value, name) {
+  const select = document.getElementById('form-plan');
+  select.value = value;
+  document.getElementById('subscription-form').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Handle Form Submission & Validation
+function handleFormSubmit(e) {
+  e.preventDefault();
+  
+  const firstname = document.getElementById('user-firstname').value;
+  const lastname = document.getElementById('user-lastname').value;
+  const phone = document.getElementById('user-phone').value;
+  const city = document.getElementById('user-city').value;
+  const planVal = document.getElementById('form-plan').value;
+
+  const planName = planVal === '120' ? 'Déjeuner ET Dîner (120 MAD / repas)' : 'Déjeuner OU Dîner (125 MAD / repas)';
+
+  document.getElementById('modal-user-name').innerText = `${firstname} ${lastname}`;
+  document.getElementById('modal-plan').innerText = planName;
+  document.getElementById('modal-city').innerText = city;
+  document.getElementById('modal-phone').innerText = phone;
+
+  document.getElementById('confirmation-modal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('confirmation-modal').classList.add('hidden');
+}
+
+window.onload = function() {
+  renderMeals();
+};
+</script>
+</body>
+</html>
